@@ -16,6 +16,36 @@
     --main-color:#15ff00;
 }
 
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: var(--main-color);
+    color: #000;
+    padding: 1rem 2rem;
+    z-index: 10000;
+    font-size: 1.6rem;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+:focus-visible {
+    outline: 3px solid var(--main-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 html{
     font-size: 60%;
     overflow-x: hidden;
@@ -32,7 +62,7 @@ body{
     left: 0;
     width: 100%;
     padding: 4rem 12% 4rem;
-    background: rgb(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -421,7 +451,7 @@ span{
 
 .services-container{
     display: grid;
-    grid-template-columns: repeat(2,left);
+    grid-template-columns: repeat(2,1fr);
     align-items: center;
     gap: 2.5rem;
 }
@@ -440,7 +470,7 @@ span{
     background: white;
     color: black;
     border: 5px solid var(--main-color);
-    transform: calc(1.03);
+    transform: scale(1.03);
 }
 
 .services-box .services-info{
@@ -502,11 +532,11 @@ span{
 
     min-height: 550px;
     max-width: 450px;
-    background: rgb(0, 0, 0, 0.7);
-    border: 3px solid rgb(238, 238, 238. 0.2);
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid rgba(238, 238, 238, 0.2);
     border-radius: 2rem;
     margin: 0 2rem;
-    padding: 30px 60p;
+    padding: 30px 60px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -522,7 +552,7 @@ span{
 
 .testimonials-item:hover{
     border: 3px solid var(--main-color);
-    transform: translateY(-10px) calc(1.03);
+    transform: translateY(-10px) scale(1.03);
     box-shadow: 0 0 50px var(--main-color);
 }
 
@@ -534,9 +564,9 @@ span{
     font-size: 1.3rem;
 }
 
-#star{
+.star-icon{
     color: gold;
-    font-family: 2rem;
+    font-size: 2rem;
 }
 
 .contact{
@@ -608,7 +638,7 @@ span{
     transition: 0.3s ease-in-out;
 }
 
-.footer .cocial a:hover{
+.footer .social a:hover{
     transform: scale(1.2) translateY(-10px);
     background-color: var(--main-color);
     background: black;
@@ -639,7 +669,7 @@ span{
     padding: 0 15px;
 }
 
-.footer .coptyight {
+.footer .copyright {
     margin-top: 50px;
      text-align: center;
      font-size: 16px;
@@ -657,7 +687,7 @@ span{
     }
 }
 
-@media(max-width:991) {
+@media(max-width:991px) {
     .header{
         padding: 2rem 3%;
     }
